@@ -1,5 +1,3 @@
-import PropTypes from 'prop-types';
-
 const PostCard = ({ post }) => {
   return (
     <div className="bg-white overflow-hidden shadow rounded-lg">
@@ -10,7 +8,7 @@ const PostCard = ({ post }) => {
         </div>
         <div className="mt-4 flex items-center justify-between">
           <span className="text-sm text-gray-500">
-            {new Date(post.createdAt).toLocaleDateString()}
+            Posted on: {new Date(post.createdAt).toLocaleDateString()}
           </span>
           <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
             {post.commentCount} comments
@@ -19,15 +17,6 @@ const PostCard = ({ post }) => {
       </div>
     </div>
   );
-};
-
-PostCard.propTypes = {
-  post: PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    content: PropTypes.string.isRequired,
-    createdAt: PropTypes.string.isRequired,
-    commentCount: PropTypes.number.isRequired
-  }).isRequired
 };
 
 export default PostCard;

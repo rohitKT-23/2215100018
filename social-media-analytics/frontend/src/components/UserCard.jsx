@@ -1,5 +1,3 @@
-import PropTypes from 'prop-types';
-
 const UserCard = ({ user }) => {
   return (
     <div className="bg-white overflow-hidden shadow rounded-lg">
@@ -18,13 +16,6 @@ const UserCard = ({ user }) => {
       </div>
     </div>
   );
-};
-
-UserCard.propTypes = {
-  user: PropTypes.shape({
-    username: PropTypes.string.isRequired,
-    commentCount: PropTypes.number.isRequired
-  }).isRequired
 };
 
 export default UserCard;
